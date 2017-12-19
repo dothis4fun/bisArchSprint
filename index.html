@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A layout example with a side menu that hides on mobile, just like the Pure website.">
+    <title>OrganЯUs</title>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+
+
+    <style>
+         body {
+            color: #777;
+        }
+
+        
+
+        
+        This is the parent `<div>` that contains the menu and the content area.
+        
+        #layout {
+            position: relative;
+            left: 0;
+            padding-left: 0;
+        }
+            #layout.active #menu {
+                left: 150px;
+                width: 150px;
+            }
+
+            #layout.active .menu-link {
+                left: 150px;
+                text-decoration: none;
+            }
+        /*
+        The content `<div>` is where all your content goes.
+        */
+        .content {
+            margin: 0 auto;
+            padding: 0 2em;
+            max-width: 800px;
+            margin-bottom: 50px;
+            line-height: 2.8em;
+            min-height: 100%;
+        }
+
+        .header {
+             margin: 0;
+             color: #333;
+             text-align: center;
+             padding: 2.5em 2em 0;
+             border-bottom: 1px solid #eee;
+         }
+            .header h1 {
+                margin: 0.2em 0;
+                font-size: 6em;
+                font-weight: 300;
+                font-family: 'Lobster', cursive;
+            }
+             .header h2 {
+                font-weight: 300;
+                color: #ccc;
+                padding: 0;
+                margin-top: 0;
+                
+
+            }
+
+        .content-subhead {
+            margin: 50px 0 20px 0;
+            font-weight: 300;
+            color: #888;
+            font-size: 45px;
+            font-family: 'Ubuntu', sans-serif;
+        }
+
+
+
+       
+
+        #menu {
+            margin-left: -150px; /* "#menu" width */
+            width: 150px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            z-index: 1000; /* so the menu or its navicon stays above all content */
+            background: #aec6cf;
+            
+            
+        }
+            
+
+        /* -- Responsive Styles (Media Queries) ------------------------------------- */
+
+        @media {
+
+            .header,
+            .content {
+                padding-left: 2em;
+                padding-right: 2em;
+            }
+
+            #layout {
+                padding-left: 150px; /* left col width "#menu" */
+                left: 0;
+            }
+            #menu {
+                left: 150px;
+                text-decoration:none;
+            }
+
+
+            
+        
+
+        @media (max-width: 48em) {
+            
+            #layout.active {
+                position: relative;
+                left: 150px;
+            }
+        }
+        .footer {
+          position: absolute;
+          width: 100%;
+          height: 40px;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          padding: 1rem;
+          background-color: #efefef;
+          text-align: center;
+          
+        }
+        html{
+            position:relative;
+            min-height:100%;
+            }
+        nav{
+            float:right;
+            text-decoration: none;
+            
+            }
+        nav ul{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            }
+
+        nav li{
+            display: inline-block;
+            margin-left: 50px;
+            padding-top: 25px;
+            font-weight:bold;
+            position: relative;
+            }
+        nav a{
+            color: #444;
+            text-decoration: none;
+            text-transform: Uppercase;
+            font-size: 14px;
+            }
+        nav a:hover{
+            color: #000;
+            text-decoration: none;
+            }
+        nav a:before{
+            content: '';
+            display: block;
+            height: 4px;
+            
+            background-color: #444;
+            position: absolute;
+            top: 50px;
+            width: 0%;
+            transition: all ease-in-out 250ms;
+            }
+        nav a:hover::before{
+            width: 100%;
+            
+        }
+        .img-fluid{
+            max-width: 100%;
+            height: 500px;
+
+        }
+        p{
+            font-family: 'Lora', serif;
+            font-size: 40px;
+        }
+        h3{
+            margin: 0;
+            font-size: 14px;
+        }
+    </style>
+    
+    
+        
+   
+</head>
+<body>
+
+<div id="layout">
+    
+<!-- Sidebar -->
+    <div id="menu">
+        <nav>
+         <ul>
+          <li><h2 >Menu</h2></li>
+          <li><a href="index.html" >Home</a></li>
+          <li><a href="#" >Order</a></li>
+          <li><a href="#" >Donate</a></li>
+          <li><a href="contact.html" >Contact</a></li>
+          </ul>
+        </nav>   
+    </div>
+
+    <div id="main">
+        <div class="header">
+            <h1>Organs Я Us</h1>
+            <h2>A subtitle for your page goes here</h2>
+            <img src="xray.jpeg" class="img-fluid" alt="Responsive image" >
+            
+                
+        </div>
+
+        <div class="content">
+            <h2 class="content-subhead">Our Mission</h2>
+            <p>
+                Organs Я Us mission is to address the problem people in need of an organ transplant face. Our approach to the problem takes a different angle by not discriminating age or health and strictly sticking to a money first approach. Statistics show every 10 minutes a new person is added to the national transplant waiting list with an average of 20 people dying each day while waiting for a transplant. Our goal is to cut the middle man and process down to connecting “donners” directly to customers.<br>
+                The organ transplant list is operated in a way that can make it difficult for many to receive the organs they need and increases wait times. Their approach goes to best matches, the urgency of the transplant, time on the waiting list and proximity to the donor are what guide organ distribution, with special preference being provide to children in many cases. We look to eliminate the process by becoming the epicenter of all organs needed. If we have the organ you need and can afford it we will ship it your way no, if, ands or buts. <br>
+            
+            
+            </p>
+
+
+            
+               
+            <div class="footer">
+                  <h3>OrgansЯus&#169;</h3>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+    
+
+</body>
+</html>

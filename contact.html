@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A layout example with a side menu that hides on mobile, just like the Pure website.">
+    <title>Organ Site</title>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+   
+    <style>
+         body {
+            color: #777;
+        }
+
+        
+
+        
+        This is the parent `<div>` that contains the menu and the content area.
+        
+        #layout {
+            position: relative;
+            left: 0;
+            padding-left: 0;
+        }
+            #layout.active #menu {
+                left: 150px;
+                width: 150px;
+            }
+
+            #layout.active .menu-link {
+                left: 150px;
+                text-decoration: none;
+            }
+        /*
+        The content `<div>` is where all your content goes.
+        */
+        .content {
+            margin: 0 auto;
+            padding: 0 2em;
+            max-width: 800px;
+            margin-bottom: 50px;
+            line-height: 1.6em;
+        }
+
+        .header {
+             margin: 0;
+             color: #333;
+             text-align: center;
+             padding: 2.5em 2em 0;
+             border-bottom: 1px solid #eee;
+         }
+            .header h1 {
+                margin: 0.2em 0;
+                font-size: 3em;
+                font-weight: 300;
+            }
+             .header h2 {
+                font-weight: 300;
+                color: #ccc;
+                padding: 0;
+                margin-top: 0;
+            }
+
+        .content-subhead {
+            margin: 50px 0 20px 0;
+            font-weight: 300;
+            color: #888;
+        }
+
+
+
+        /*
+        The `#menu` `<div>` is the parent `<div>` that contains the `.pure-menu` that
+        appears on the left side of the page.
+        */
+
+        #menu {
+            margin-left: -150px; /* "#menu" width */
+            width: 150px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            z-index: 1000; /* so the menu or its navicon stays above all content */
+            background: #aec6cf;
+            
+            
+        }
+            
+
+        /* -- Responsive Styles (Media Queries) ------------------------------------- */
+
+        @media {
+
+            .header,
+            .content {
+                padding-left: 2em;
+                padding-right: 2em;
+            }
+
+            #layout {
+                padding-left: 150px; /* left col width "#menu" */
+                left: 0;
+            }
+            #menu {
+                left: 150px;
+                text-decoration:none;
+            }
+
+
+            
+        
+
+        @media (max-width: 48em) {
+            
+            #layout.active {
+                position: relative;
+                left: 150px;
+            }
+        }
+        .footer {
+          position: absolute;
+          height: 40px;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          padding: 1rem;
+          background-color: #efefef;
+          text-align: center;
+        }
+        html{
+            position:relative;
+            min-height:100%;
+            }
+        nav{
+            float:right;
+            text-decoration: none;
+            
+            }
+        nav ul{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            }
+
+        nav li{
+            display: inline-block;
+            margin-left: 50px;
+            padding-top: 25px;
+            font-weight:bold;
+            position: relative;
+            }
+        nav a{
+            color: #444;
+            text-decoration: none;
+            text-transform: Uppercase;
+            font-size: 14px;
+            }
+        nav a:hover{
+            color: #000;
+            }
+        nav a:before{
+            content: '';
+            display: block;
+            height: 4px;
+            
+            background-color: #444;
+            position: absolute;
+            top: 50px;
+            width: 0%;
+            transition: all ease-in-out 250ms;
+            }
+        nav a:hover::before{
+            width: 100%;
+            
+        }
+    
+    
+    </style>
+    
+    
+        
+   
+</head>
+<body>
+
+<div id="layout">
+    
+<!-- Sidebar -->
+    <div id="menu">
+        <nav>
+         <ul>
+          <li><h3 >Menu</h3></li>
+          <li><a href="index.html" >Home</a></li>
+          <li><a href="#" >Order</a></li>
+          <li><a href="#" >Donate</a></li>
+          <li><a href="contact.html" >Contact</a></li>
+          </ul>
+        </nav>   
+    </div>
+
+    <div id="main">
+        <div class="container-fluid">
+		<h1>Contact Us</h1>
+		<form action="/action_page.php">
+			<div class="form-group">			
+				<label for="Name">Name:</label>
+				<input type="text" class="form-control" id="name" placeholder="enter name" name="name"/>
+			</div>
+			
+			<div class="form-group">			
+				<label for="Name">Country:</label>
+				<input type="text" class="form-control" id="country" placeholder="enter country" name="country"/>
+			</div>
+			
+			<div class="form-group">			
+				<label for="Name">Email:</label>
+				<input type="email" class="form-control" id="email" placeholder="enter email" name="email"/>
+			</div>
+			
+			<div class="form-group">			
+				<label for="Name">Message:</label>
+				<input type="text" class="form-control" id="message" placeholder="enter message" name="message"/>
+			</div>
+			
+			<button type="submit" class="btn btn-button">Submit</button>
+			<button type="submit" class="btn btn-button">Reset</button>
+		</form>
+	</div>
+    </div>
+</div>
+
+
+    <div class="footer">
+      <p>Footer</p>
+    </div>
+
+</body>
+</html>
